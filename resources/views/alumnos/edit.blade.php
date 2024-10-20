@@ -1,30 +1,30 @@
 @extends("plantillas/plantilla2")
 
 @section("contenido1")
-   @include("puestos/tablahtml") 
+   @include("alumnos/tablahtml") 
 @endsection
 
 @section("contenido2")
 <h1>Editando</h1>
 
-<form action="{{route('puestos.update',$puesto->id)}}" method="POST">
+<form action="{{route('alumnos.update',$alumno->id)}}" method="POST">
   @csrf
    <div class="row mb-3">
-     <label for="nombre" class="col-sm-3 col-form-label">Id Puesto</label>
+     <label for="nombre" class="col-sm-3 col-form-label">Nombre</label>
      <div class="col-sm-9">
-       <input type="text" class="form-control" id="idpuesto" name="idpuesto" value="{{$puesto->idpuesto}}">
+       <input type="text" class="form-control" id="nombre" name="nombre" value="{{$alumno->nombre}}">
      </div>
    </div>
    <div class="row mb-3">
-      <label for="apellidop" class="col-sm-3 col-form-label">Nombre Puesto</label>
+      <label for="apellidop" class="col-sm-3 col-form-label">Apellido Paterno</label>
       <div class="col-sm-9">
-        <input type="text" class="form-control" id="nombrePuesto" name="nombrePuesto" value="{{$puesto->nmbrePuesto}}">
+        <input type="text" class="form-control" id="apellidop" name="apellidop" value="{{$alumno->apellidop}}">
       </div>
     </div>
     <div class="row mb-3">
-      <label for="email" class="col-sm-3 col-form-label">Tipo</label>
+      <label for="email" class="col-sm-3 col-form-label">Email</label>
       <div class="col-sm-9">
-        <input type="text" class="form-control" id="tipo" name="tipo" value="{{$puesto->tipo}}">
+        <input type="email" class="form-control" id="email" name="email" value="{{$alumno->email}}">
       </div>
     </div>
    <button type="submit" class="btn btn-primary">Grabar</button>

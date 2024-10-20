@@ -2,7 +2,7 @@
 
 @section("contenido1")
     
-   @include("puestos/tablahtml")
+   @include("alumnos/tablahtml")
     @endsection
 
     

@@ -6,7 +6,7 @@
     {{--@endforeach--}}
     
  </ul>
- <a href="{{route('plazasa.create')}}" class="btn button btn-primary">Nuevo</a>
+ <a href="{{route('plazas.create')}}" class="btn button btn-primary">Nuevo</a>
  <div
      class="table-responsive-md"
  >

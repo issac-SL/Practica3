@@ -6,7 +6,7 @@
     {{--@endforeach--}}
     
  </ul>
- <a href="{{route('puestos.create')}}" class="btn button btn-primary">Nuevo</a>
+ <a href="{{route('alumnos.create')}}" class="btn button btn-primary">Nuevo</a>
  <div
      class="table-responsive-md"
  >
@@ -15,29 +15,29 @@
      >
          <thead>
              <tr>
-                 <th scope="col">ID </th>
-                 <th scope="col">ID Puesto</th>
-                 <th scope="col">Nombre Puesto</th>
-                 <th scope="col">Tipo</th>
+                 <th scope="col">ID</th>
+                 <th scope="col">Nombre</th>
+                 <th scope="col">Apellido P</th>
+                 <th scope="col">Email</th>
                  <th scope="col"></th>
                  <th scope="col"></th>
                  <th scope="col"></th>
              </tr>
          </thead>
          <tbody
-         @foreach ($puestos as $puesto )
+         @foreach ($alumnos as $alumno )
              <tr class="">
-                 <td scope="row">{{$puesto->id}}</td>
-                 <td>{{$puesto->idpuesto}}</td>
-                 <td>{{$puesto->nombrePuesto}}</td>
-                 <td>{{$puesto->tipo}}</td>
-                 <td><a href="{{route('puestos.edit',$puesto->id)}}" class="btn button btn-primary">ED</a></td>
-                 <td><a href="{{route('puestos.show',$puesto->id)}}" class="btn button btn-primary">X</a></td>
-                 <td><a href="{{route('puestos.show',$puesto->id)}}" class="btn button btn-primary">ver</a></td>
+                 <td scope="row">{{$alumno->id}}</td>
+                 <td>{{$alumno->nombre}}</td>
+                 <td>{{$alumno->apellidop}}</td>
+                 <td>{{$alumno->email}}</td>
+                 <td><a href="{{route('alumnos.edit',$alumno->id)}}" class="btn button btn-primary">ED</a></td>
+                 <td><a href="{{route('alumnos.show',$alumno->id)}}" class="btn button btn-primary">X</a></td>
+                 <td><a href="{{route('alumnos.show',$alumno->id)}}" class="btn button btn-primary">ver</a></td>
              </tr>
          @endforeach
            
          </tbody>
      </table>
-     {{$puestos->links()}}
+     {{$alumnos->links()}}
  </div>
