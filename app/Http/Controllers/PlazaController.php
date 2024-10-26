@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Plaza;
 use Illuminate\Http\Request;
 
-class PlazasController extends Controller
+class PlazaController extends Controller
 {
     /**
      * Display a listing of the resource.

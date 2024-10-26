@@ -3,18 +3,32 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alumno;
+use App\Models\Depto;
 use Illuminate\Http\Request;
 
 class AlumnoController extends Controller
 {
+    public $val;
+
+    public function __construct(){
+       $this->val= [
+            'nombre'=>['required','min:3'],
+            'apellidop'=>['required'],
+            'apellidom'=>['required'],
+            'sexo'=>['required'],
+            'email'=>'required',
+            'carrera_id'=>'required'];
+    }
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $alumnos = Alumno::paginate(5);
+        
+        $alumnos = Alumno::with('carrera.depto');
+     
        // return view("alumnos/index",['alumnos'=>$alumnos]);
-        return view ("alumnos/index",compact("alumnos"));
+        return view ("alumnos2/index",compact("alumnos","deptos"));
     }
 
     /**
@@ -23,7 +37,11 @@ class AlumnoController extends Controller
     public function create()
     {
         $alumnos = Alumno::paginate(5);
-        return view ("alumnos.create",compact("alumnos"));
+        $alumno = new Alumno;
+        $accion ="C";
+        $txtbtn="Guardar";
+        $des="";
+        return view ("alumnos2.frm",compact("alumnos","alumno","accion","txtbtn","des"));
     }
 
     /**
@@ -33,8 +51,9 @@ class AlumnoController extends Controller
     {
         //aun no grabamos
         //return $request;
-        Alumno::create($request->all());
-        return redirect()->route("alumnos.index");
+        $val = $request->validate($this->val);
+        Alumno::create($val);
+        return redirect()->route("alumnos.index")->with("mensaje","Se inserto correctamente.");
     }
 
     /**
@@ -43,7 +62,10 @@ class AlumnoController extends Controller
     public function show(Alumno $alumno)
     {
         $alumnos = Alumno::paginate(5);
-        return view ("alumnos.show",compact('alumnos','alumno'));
+        $accion="D";
+        $txtbtn="Confirmar la Eliminacion";
+        $des="disabled";
+        return view ("alumnos2.frm",compact('alumnos','alumno','accion','txtbtn','des'));
     }
 
     /**
@@ -52,7 +74,10 @@ class AlumnoController extends Controller
     public function edit(Alumno $alumno)
     {
         $alumnos = Alumno::paginate(5);
-        return view ("alumnos.edit",compact("alumnos","alumnos"));
+        $accion ="E";
+        $txtbtn= "Actualizar";
+        $des="";
+        return view ("alumnos2.frm",compact("alumnos","alumno","accion","txtbtn","des"));
     }
 
     /**
@@ -60,8 +85,9 @@ class AlumnoController extends Controller
      */
     public function update(Request $request, Alumno $alumno)
     {
+        $val = $request->validate($this->val);
         //aqui se actulizaran los datos 
-        $alumno->update($request->all());
+        $alumno->update($val);
         return redirect()->route('alumnos.index');
     }
 

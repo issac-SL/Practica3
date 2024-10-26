@@ -6,13 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-
-class Alumno extends Model
+class Periodo extends Model
 {
     use HasFactory;
-    protected $fillable =['nombre','apellidop','apellidom','sexo','email'];
-
-    public function carrera():BelongsTo{
-        return $this->belongsTo(Carrera::class);
-    }
+    protected $fillable =['idperiodo','periodo','descCorta','fechaIni','fechaFin'];
 }

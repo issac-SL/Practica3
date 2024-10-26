@@ -12,7 +12,7 @@
    <div class="row mb-3">
      <label for="nombre" class="col-sm-3 col-form-label">Id Plaza</label>
      <div class="col-sm-9">
-       <input type="text" class="form-control" id="idpuesto" name="idpuesto" value="{{$plaza->idplaza}}">
+       <input type="text" class="form-control" id="idplaza" name="idplaza" value="{{$plaza->idplaza}}">
      </div>
    </div>
    <div class="row mb-3">

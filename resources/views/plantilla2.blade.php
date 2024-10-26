@@ -14,14 +14,14 @@
         >Catalogos
     </a>
     <div class="dropdown-menu">
-        <a class="dropdown-item" href="">Periodos</a>
-        <a class="dropdown-item" href="">Plazas</a>
+        <a class="dropdown-item" href="/periodos.index">Periodos</a>
+        <a class="dropdown-item" href="/plazas.index">Plazas</a>
         <a class="dropdown-item" href="/puestos.index">Puestos</a>
         <a class="dropdown-item" href="">Personal</a>
-        <a class="dropdown-item" href="">Deptos</a>
-        <a class="dropdown-item" href="">Carreras</a>
-        <a class="dropdown-item" href="">Reticulas</a>
-        <a class="dropdown-item" href="">Materias</a>
+        <a class="dropdown-item" href="/deptos.index">Deptos</a>
+        <a class="dropdown-item" href="/carreras.index">Carreras</a>
+        <a class="dropdown-item" href="/reticulas.index">Reticulas</a>
+        <a class="dropdown-item" href="materias.index">Materias</a>
         <a class="dropdown-item" href="/alumnos.index">Alumnos</a>
         
     </div>

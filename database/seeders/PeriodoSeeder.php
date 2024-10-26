@@ -1,18 +1,17 @@
 <?php
 
 namespace Database\Seeders;
-
-use App\Models\Plaza;
+use App\Models\Periodo;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PlazaSeeder extends Seeder
+class PeriodoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        Plaza::factory(25)->create();
+        Periodo::factory(25)->create();
     }
 }

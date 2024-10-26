@@ -1,7 +1,7 @@
 @extends("plantillas/plantilla2")
 
 @section("contenido1")
-   @include("puestos/tablahtml") 
+   @include("plazas/tablahtml") 
 @endsection
 
 @section("contenido2")

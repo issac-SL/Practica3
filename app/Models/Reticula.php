@@ -1,18 +1,15 @@
 <?php
 
 namespace App\Models;
-
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-
-class Alumno extends Model
+class Reticula extends Model
 {
     use HasFactory;
-    protected $fillable =['nombre','apellidop','apellidom','sexo','email'];
-
-    public function carrera():BelongsTo{
+    protected $fillable =['idreticula','descripcion','fechaEnvigor','carrera_id'];
+    public function carrera(): BelongsTo{
         return $this->belongsTo(Carrera::class);
-    }
+}
 }
